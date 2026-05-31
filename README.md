@@ -1,4 +1,4 @@
-# RG40XXV RGB Settings Tool
+# RG40XXV "RGB settings" Tool
 
 ## Description
 
@@ -37,6 +37,7 @@ The tool follows the minimalist philosophy of [MinUI](https://github.com/shaunin
 | :----------------: | --------------------------------------------------- |
 | `assets`           | Contains the resources required for the repository. |
 | `RGB settings.pak` | Main MinUI package.                                 |
+| `pak.json`         | Package metadata.                                   |
 | `README.md`        | The README file you are currently reading 😉.       |
 
 ## Installation & Usage
