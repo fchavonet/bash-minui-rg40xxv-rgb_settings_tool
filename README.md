@@ -8,9 +8,9 @@ It provides simple and reliable actions to:
 
 - Enable RGB lighting (white).
 - Disable RGB lighting.
-- Toggle automatic RGB activation at boot.
+- Configure automatic RGB activation at boot.
 
-The tool follows the minimalist philosophy of [MinUI](https://github.com/shauninman/MinUI): one action per `.pak`, no unnecessary UI, fast execution.
+The tool follows the minimalist philosophy of [MinUI](https://github.com/shauninman/MinUI): a lightweight menu-driven interface, fast execution and minimal system modifications.
 
 > Compatibility
 > - Device: RG40XXV.
@@ -24,7 +24,7 @@ The tool follows the minimalist philosophy of [MinUI](https://github.com/shaunin
 - Provide a simple and reliable RGB control for MinUI users.
 - Respect the MinUI UX philosophy (minimal, fast, no clutter).
 - Avoid complex dependencies (pure Bash + system interfaces).
-- Ensure safe system modification (autoboot with backup & rollback).
+- Ensure safe and reversible startup configuration.
 - Deliver a modular and maintainable solution.
 
 ## Tech Stack
@@ -33,11 +33,11 @@ The tool follows the minimalist philosophy of [MinUI](https://github.com/shaunin
 
 ## File Description
 
-| **FILE**       | **DESCRIPTION**                                     |
-| :------------: | --------------------------------------------------- |
-| `assets`       | Contains the resources required for the repository. |
-| `RGB Settings` |  MinUI `.pak` actions (RGB ON, OFF, Autoboot).      |
-| `README.md`    | The README file you are currently reading 😉.       |
+| **FILE**           | **DESCRIPTION**                                     |
+| :----------------: | --------------------------------------------------- |
+| `assets`           | Contains the resources required for the repository. |
+| `RGB settings.pak` | Main MinUI package.                                 |
+| `README.md`        | The README file you are currently reading 😉.       |
 
 ## Installation & Usage
 
@@ -52,17 +52,23 @@ The tool follows the minimalist philosophy of [MinUI](https://github.com/shaunin
 git clone https://github.com/fchavonet/bash-minui-rg40xxv-rgb_settings_tool.git
 ```
 
-2. Copy the `RGB Settings` folder into `Tools/rg35xxplus/` at the root of your SD card.
+2. Copy the `RGB settings.pak` folder into `Tools/rg35xxplus/` at the root of your SD card.
 
 3. The folder structure should look like this on the card:
 
 ```
     Tools/
     ├── rg35xxplus/
-    │   ├── RGB Settings/
-    │   │   ├── 01) RGB On.pak/
-    │   │   ├── 02) RGB Off.pak/
-    │   │   ├── 03) Enable on startup.pak - Disable on startup.pak
+    │   ├── RGB settings.pak/
+    │   │   ├── launch.sh
+    │   │   ├── bin/
+    │   │   │   ├── minui-list.bin
+    │   │   │   ├── white.bin
+    │   │   │   ├── off.bin
+    │   │   ├── scripts/
+    │   │   │   ├── rgb-on.sh
+    │   │   │   ├── rgb-off.sh
+    │   │   │   ├── rgb-startup-toggle.sh
 ```
 
 ### Usage
@@ -71,11 +77,12 @@ git clone https://github.com/fchavonet/bash-minui-rg40xxv-rgb_settings_tool.git
 
 2. Navigate to the `Tools` section.
 
-3. Launch one of the following:
-    - RGB On → Turn RGB ON (white).
-    - RGB Off → Turn RGB OFF.
-    - Enable on startup → Enable RGB at startup.
-    - Disable on startup → Disable RGB at startup.
+3. Launch `RGB settings.pak`.
+
+4. Use the menu to:
+    - Enable RGB lighting.
+    - Disable RGB lighting.
+    - Toggle RGB startup behavior.
 
 You can also download the latest release by clicking [here](https://github.com/fchavonet/bash-minui-rg40xxv-rgb_settings_tool/releases).
 
@@ -84,12 +91,13 @@ You can also download the latest release by clicking [here](https://github.com/f
 ## What's Next?
 
 - Add support for additional RGB colors.
-- Improve the user interface.
 - Explore compatibility with other Anbernic devices.
 
 ## Thanks
 
 - A big thank you to my friend Alexis, always available to test and provide feedback on this project.
+- A special thank you to [Shaun Inman](https://github.com/shauninman), creator of [MinUI](https://github.com/shauninman/MinUI), for his outstanding work on one of the best minimalist operating systems available for Anbernic handheld consoles.
+- A special thank you to [José Díaz-González](https://github.com/josegonzalez), creator of [`minui-list`](https://github.com/josegonzalez/minui-list), for providing a simple and elegant menu system that helped improve the user experience of this project.
 
 ## Author(s)
 
