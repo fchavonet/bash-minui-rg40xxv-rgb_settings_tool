@@ -4,7 +4,7 @@
     "description": "Control the RGB LED behavior of the RG40XXV analog stick.",
     "author": "fchavonet",
     "repo_url": "https://github.com/fchavonet/bash-minui-rg40xxv-rgb_settings_tool",
-    "release_filename": "RGB.settings.2.0.0.zip",
+    "release_filename": "rgb_settings-2.0.0.zip",
     "platforms": [
         "rg35xxplus"
     ],
